@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="message.css">
+        <style>
+            /* 非组件样式 */
+            .btn{
+                margin-right:20px;
+            }
+            .p40{
+                padding:40px;
+            }
+            .mt20{
+                margin-top:20px;
+            }
+            body {
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="p40">
+            <p>自动消失的提示框</p>
+            <p>-------单行提示--------</p>
+            <button class="btn btn-success btn1">成功提示</button>
+            <button class="btn btn-danger btn2">失败提示</button>
+            <button class="btn btn-warning btn3">警告提示</button>
+            <button class="btn btn-info btn4">信息提醒</button>
+            <button class="btn btn-primary btn5">询问提示</button>
+            <hr>
+            <p>-------带title提示--------</p>
+            <button class="btn btn-success btn6">成功提示</button>
+            <button class="btn btn-danger btn7">失败提示</button>
+            <button class="btn btn-warning btn8">警告提示</button>
+            <button class="btn btn-info btn9">信息提醒</button>
+            <button class="btn btn-primary btn10">询问提示</button>
+        </div>
+
+        <div class="p40">
+            <p>带按钮的提示框</p>
+            <button class="btn btn-primary btn11">询问提示</button>
+        </div>
+
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.0.0/jquery.js"></script>
+        <script src="message.js"></script>
+        <script>
+            $(function(){
+                $('.btn1').on('click',function(){
+                    $.message({
+                        message: '操作成功',
+                        type: 'success'
+                    }, 1);
+                })
+                $('.btn2').on('click',function(){
+                    $.message({
+                        message: '操作失败',
+                        type: 'error'
+                    }, 1);
+                })
+                $('.btn3').on('click',function(){
+                    $.message({
+                        message: '警告操作',
+                        type: 'warning'
+                    }, 1);
+                })
+                $('.btn4').on('click',function(){
+                    $.message({
+                        message: '信息提醒',
+                        type: 'info'
+                    }, 1);
+                })
+                $('.btn5').on('click',function(){
+                    $.message({
+                        message: '询问操作',
+                        type: 'question'
+                    }, 1);
+                })
+
+                $('.btn6').on('click',function(){
+                    $.message({
+                        title:'成功',
+                        type:'success',
+                        message: '成功成功成功成功成功成功成功成功成功成功成功成功成功成功成功'
+                    }, 2);
+                })
+                $('.btn7').on('click',function(){
+                    $.message({
+                        title:'失败提示',
+                        message:'失败提示失败提示失败提示失败提示失败提示失败提示失败提示失败提示失败提示',
+                        type:'error'
+                    }, 2);
+                })
+                $('.btn8').on('click',function(){
+                    $.message({
+                        title: '警告提示',
+                        message:'警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示警告提示',
+                        type:'warning'
+                    }, 2);
+                })
+                $('.btn9').on('click',function(){
+                    $.message({
+                        title:'信息提示',
+                        message:'信息提示信息提示信息提示信息提示信息提示信息提示信息提示信息提示信息提示信息提示',
+                        type:'info'
+                    }, 2);
+                })
+                
+                $('.btn10').on('click',function(){
+                    $.message({
+                        title:'确认要删除这条信息吗？',
+                        message:'失败提示失败提示失败提示失败提示失败提示失败提示失败提示失败提示失败提示',
+                        type:'question'
+                    }, 2);
+                })
+                
+                $('.btn11').on('click',function(){
+                    $.message({
+                        title:'确认要删除这条信息吗？',
+                        message:'删除后，数据将不可恢复',
+                        type:'question',
+                        showClose:true,
+                        autoClose:false,
+                        onClose: function(){
+                            alert('取消删除')
+                        },
+                        onConfirm: function(){
+                            alert('删除成功')
+                        }
+                    }, 3);
+                })
+            })
+        </script>
+    </body>
+</html>
