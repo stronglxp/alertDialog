@@ -2,6 +2,7 @@
 
 #### 使用方式
 1、下载压缩包解压
+
 2、在需要使用的页面，引入下面的文件
 ```
 <link rel="stylesheet" href="message.css">
@@ -26,3 +27,9 @@ $('.btn11').on('click',function(){
 })
 ```
 #### 具体使用方式和字段含义可以查看message.js和index.html的示例。
+
+![单行提示框](./images/alert1.png)
+
+![带title的提示框](./images/alert2.png)
+
+![带button的提示框](./images/alert3.png)
