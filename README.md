@@ -28,14 +28,14 @@ $.message({
 
 #### 具体使用方式和字段含义可以查看message.js和index.html的示例，message.js包含对各个参数的说明，index.html包含各种类型的提醒框。
 
-#### （1）、单行提示框
+#### （1）单行提示框
 
 ![单行提示框](./images/alert1.png)
 
-#### （2）、带title的提示框
+#### （2）带title的提示框
 
 ![带title的提示框](./images/alert2.png)
 
-#### （3）、带button的确认框
+#### （3）带button的确认框
 
 ![带button的提示框](./images/alert3.png)
